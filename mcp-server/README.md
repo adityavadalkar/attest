@@ -1,4 +1,4 @@
-# Rebutter MCP Server
+# Attest MCP Server
 
 SHARP-compliant MCP server providing evidence retrieval tools for clinical claim verification.
 

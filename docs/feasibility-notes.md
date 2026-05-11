@@ -1,12 +1,12 @@
 # Feasibility Notes
 
-Framing Rebutter for real-world deployment within existing healthcare infrastructure and regulatory constraints.
+Framing Attest for real-world deployment within existing healthcare infrastructure and regulatory constraints.
 
 ## Standards-Based Architecture
 
 ### FHIR R4 Resources
 
-Rebutter operates entirely on standard FHIR R4 resources. No custom resource types or extensions are required.
+Attest operates entirely on standard FHIR R4 resources. No custom resource types or extensions are required.
 
 Resources consumed:
 - `Patient` -- demographics and identifiers
@@ -18,28 +18,28 @@ Resources consumed:
 - `Procedure` -- surgical and procedural history
 - `CarePlan` -- active care plans and goals
 
-Any FHIR R4-compliant server (HAPI FHIR, Epic FHIR API, Cerner FHIR API, etc.) can serve as Rebutter's data source without modification.
+Any FHIR R4-compliant server (HAPI FHIR, Epic FHIR API, Cerner FHIR API, etc.) can serve as Attest's data source without modification.
 
 ### SHARP Headers for Security Context
 
-Rebutter uses SHARP-on-MCP headers for authentication and authorization context. This approach avoids custom auth schemes:
+Attest uses SHARP-on-MCP headers for authentication and authorization context. This approach avoids custom auth schemes:
 
 - The access token is a standard SMART on FHIR token issued by the EHR's authorization server
 - No additional credential exchange or registration is needed beyond what the upstream agent already has
 - Patient scoping is enforced by the FHIR server's existing access controls
 
-This means Rebutter can be added to an existing SMART on FHIR ecosystem without changes to the auth infrastructure.
+This means Attest can be added to an existing SMART on FHIR ecosystem without changes to the auth infrastructure.
 
 ## Regulatory Positioning
 
 ### Clinical Decision Support, Not Medical Device
 
-Rebutter is positioned as a clinical decision support (CDS) tool, not a medical device:
+Attest is positioned as a clinical decision support (CDS) tool, not a medical device:
 
 - It does not make autonomous clinical decisions
 - It does not directly order treatments, medications, or procedures
 - It surfaces evidence from the patient's own medical record for clinician review
-- The clinician retains full authority to accept, modify, or dismiss Rebutter's output
+- The clinician retains full authority to accept, modify, or dismiss Attest's output
 
 This positioning aligns with FDA guidance on Clinical Decision Support Software (CDS), specifically the criteria under Section 3060 of the 21st Century Cures Act for CDS functions that are not regulated as medical devices:
 
@@ -48,11 +48,11 @@ This positioning aligns with FDA guidance on Clinical Decision Support Software 
 3. Intended for the purpose of supporting or providing recommendations to a health care professional
 4. Intended for the purpose of enabling the health care professional to independently review the basis for the recommendations
 
-Rebutter satisfies all four criteria: it analyzes text records (not images/signals), displays evidence, provides recommendations to clinicians, and enables independent review through its evidence citations and justification text.
+Attest satisfies all four criteria: it analyzes text records (not images/signals), displays evidence, provides recommendations to clinicians, and enables independent review through its evidence citations and justification text.
 
 ### Safety Language
 
-Throughout its output, Rebutter uses language that preserves clinician authority:
+Throughout its output, Attest uses language that preserves clinician authority:
 
 **Used (advisory):**
 - "Evidence suggests..."
@@ -72,7 +72,7 @@ The system highlights, surfaces, and flags -- it does not recommend, diagnose, o
 
 ### Clinician-Attestable Next Steps
 
-Every Rebutter verdict includes suggested next steps framed as actions the clinician can attest to:
+Every Attest verdict includes suggested next steps framed as actions the clinician can attest to:
 
 - "Review the advance directive dated 2022-08-20 with the patient or proxy"
 - "Confirm the patient's current transfusion preferences given the documented religious objection"
@@ -88,7 +88,7 @@ These next steps are designed to be:
 
 ### SMART on FHIR App
 
-Rebutter could be deployed as a SMART on FHIR application:
+Attest could be deployed as a SMART on FHIR application:
 
 - Launched from within the EHR context (Epic, Cerner, etc.)
 - Receives the SMART launch context (patient ID, access token, FHIR server URL)
@@ -97,7 +97,7 @@ Rebutter could be deployed as a SMART on FHIR application:
 
 ### CDS Hooks
 
-Rebutter's evaluation could be triggered via CDS Hooks:
+Attest's evaluation could be triggered via CDS Hooks:
 
 - Hook: `order-sign` -- evaluate claims when a clinician signs an order
 - Hook: `patient-view` -- surface relevant notes when a chart is opened
@@ -105,18 +105,18 @@ Rebutter's evaluation could be triggered via CDS Hooks:
 
 ### MCP Tool in Agent Workflows
 
-The current architecture -- Rebutter as an MCP tool called by upstream agents -- is the primary deployment model for the hackathon. In production, the MCP server would sit behind the organization's API gateway with SMART on FHIR token validation.
+The current architecture -- Attest as an MCP tool called by upstream agents -- is the primary deployment model for the hackathon. In production, the MCP server would sit behind the organization's API gateway with SMART on FHIR token validation.
 
 ## Scalability Considerations
 
-- **Read-only FHIR access**: Rebutter never writes to the FHIR server, minimizing risk and simplifying permissions
+- **Read-only FHIR access**: Attest never writes to the FHIR server, minimizing risk and simplifying permissions
 - **Stateless processing**: No session state between requests; each evaluation is independent
 - **Token-scoped queries**: FHIR queries are always scoped to a single patient, limiting data volume per request
 - **Cacheable FHIR responses**: Patient data that does not change frequently (advance directives, historical notes) could be cached within a request to reduce FHIR server load
 
 ## Limitations and Honest Framing
 
-- Rebutter's accuracy depends on the completeness of the FHIR record. If a relevant note was not uploaded or is in a system Rebutter cannot access, it will not be found.
+- Attest's accuracy depends on the completeness of the FHIR record. If a relevant note was not uploaded or is in a system Attest cannot access, it will not be found.
 - Free-text note interpretation is probabilistic. While GenAI performs well on clinical narrative, edge cases in unusual documentation styles may produce incorrect interpretations.
-- Rebutter does not replace clinical judgment. It is a tool for surfacing evidence that a clinician might otherwise miss or not have time to review.
+- Attest does not replace clinical judgment. It is a tool for surfacing evidence that a clinician might otherwise miss or not have time to review.
 - The system requires FHIR R4 access. Organizations still on older FHIR versions (DSTU2, STU3) or proprietary APIs would need a FHIR facade or adapter.

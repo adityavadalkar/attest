@@ -1,10 +1,10 @@
 # SHARP-on-MCP Compliance
 
-How Rebutter implements the SHARP (Secure Healthcare Agent Relay Protocol) header specification for MCP-based clinical tool chains.
+How Attest implements the SHARP (Secure Healthcare Agent Relay Protocol) header specification for MCP-based clinical tool chains.
 
 ## Headers Used
 
-Rebutter expects the following SHARP headers to be propagated via the MCP request context:
+Attest expects the following SHARP headers to be propagated via the MCP request context:
 
 | Header | Required | Description |
 |--------|----------|-------------|
@@ -26,7 +26,7 @@ The `x-fhir-access-token` is treated as a transient credential:
 
 ### Per-Request Forwarding
 
-Each FHIR API call made by Rebutter includes the token as a standard Authorization header:
+Each FHIR API call made by Attest includes the token as a standard Authorization header:
 
 ```
 GET /fhir/DocumentReference?patient=Patient/patient-janet-williams
@@ -34,7 +34,7 @@ Host: fhir.example.com
 Authorization: Bearer <x-fhir-access-token value>
 ```
 
-The token is forwarded verbatim -- Rebutter does not exchange, refresh, or modify the token. If the token expires mid-request, the FHIR server returns a 401 and Rebutter propagates the error to the caller.
+The token is forwarded verbatim -- Attest does not exchange, refresh, or modify the token. If the token expires mid-request, the FHIR server returns a 401 and Attest propagates the error to the caller.
 
 ## Patient ID Extraction
 
@@ -44,7 +44,7 @@ The primary source of patient ID is the `x-patient-id` SHARP header, set by the 
 
 ### From JWT Claims (Validation)
 
-When available, Rebutter validates the `x-patient-id` header against the `patient` claim in the JWT access token:
+When available, Attest validates the `x-patient-id` header against the `patient` claim in the JWT access token:
 
 ```json
 {
@@ -56,15 +56,15 @@ When available, Rebutter validates the `x-patient-id` header against the `patien
 }
 ```
 
-If the `patient` claim in the JWT does not match the `x-patient-id` header, Rebutter rejects the request with a 403 error. This prevents a compromised upstream agent from querying data for a patient outside the token's authorized scope.
+If the `patient` claim in the JWT does not match the `x-patient-id` header, Attest rejects the request with a 403 error. This prevents a compromised upstream agent from querying data for a patient outside the token's authorized scope.
 
 ### Scope Verification
 
-Rebutter inspects the `scope` claim in the JWT to verify that the token grants sufficient FHIR permissions for the resources it needs to query. If scopes are insufficient, the request is rejected before any FHIR calls are made.
+Attest inspects the `scope` claim in the JWT to verify that the token grants sufficient FHIR permissions for the resources it needs to query. If scopes are insufficient, the request is rejected before any FHIR calls are made.
 
 ## FHIR Scopes Declared in Capabilities
 
-Rebutter's MCP server declares the following FHIR scopes in its capability manifest. These represent the minimum access needed for second-opinion evaluation:
+Attest's MCP server declares the following FHIR scopes in its capability manifest. These represent the minimum access needed for second-opinion evaluation:
 
 ```json
 {
@@ -81,24 +81,24 @@ Rebutter's MCP server declares the following FHIR scopes in its capability manif
 }
 ```
 
-All scopes are read-only. Rebutter never writes to the FHIR server.
+All scopes are read-only. Attest never writes to the FHIR server.
 
 ## Context Propagation Through the MCP Tool Chain
 
 ### Single-Hop Propagation
 
-In the simplest case, the upstream agent calls Rebutter directly:
+In the simplest case, the upstream agent calls Attest directly:
 
 ```
-Upstream Agent --> [SHARP headers] --> Rebutter MCP Server --> FHIR Server
+Upstream Agent --> [SHARP headers] --> Attest MCP Server --> FHIR Server
 ```
 
 ### Multi-Hop Propagation
 
-If Rebutter is part of a longer tool chain (e.g., an orchestrator calls a clinical agent which calls Rebutter), SHARP headers must be propagated through each hop:
+If Attest is part of a longer tool chain (e.g., an orchestrator calls a clinical agent which calls Attest), SHARP headers must be propagated through each hop:
 
 ```
-Orchestrator --> Agent A --> [SHARP headers] --> Rebutter --> FHIR Server
+Orchestrator --> Agent A --> [SHARP headers] --> Attest --> FHIR Server
 ```
 
 Each intermediate agent is responsible for forwarding the SHARP headers unchanged. No agent in the chain may:

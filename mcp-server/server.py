@@ -5,7 +5,7 @@ from tools.search_refuting_evidence import search_refuting_evidence
 from tools.extract_documented_preferences import extract_documented_preferences
 from tools.cite_fhir_resource import cite_fhir_resource
 
-mcp = FastMCP("Rebutter", stateless_http=True, host="0.0.0.0")
+mcp = FastMCP("Attest", stateless_http=True, host="0.0.0.0")
 
 _original_get_capabilities = mcp._mcp_server.get_capabilities
 
@@ -65,6 +65,6 @@ mcp.tool(
     description=(
         "Retrieves a specific FHIR resource by type and ID and returns a structured citation "
         "with the full resource, effective date, version ID, retrieval timestamp, and a summary "
-        "excerpt suitable for inclusion in a Rebutter response."
+        "excerpt suitable for inclusion in a Attest response."
     ),
 )(cite_fhir_resource)

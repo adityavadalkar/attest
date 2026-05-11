@@ -1,10 +1,10 @@
 # AI Factor Justification
 
-Why Rebutter requires generative AI and cannot be implemented as a rule-based system.
+Why Attest requires generative AI and cannot be implemented as a rule-based system.
 
 ## The Core Problem
 
-Rebutter evaluates arbitrary clinical claims against a patient's medical record, which includes both structured data (FHIR resources with coded values) and unstructured data (free-text clinical notes). The space of possible claims is open-ended, and the evidence that supports or contradicts them is expressed in natural language with clinical nuance.
+Attest evaluates arbitrary clinical claims against a patient's medical record, which includes both structured data (FHIR resources with coded values) and unstructured data (free-text clinical notes). The space of possible claims is open-ended, and the evidence that supports or contradicts them is expressed in natural language with clinical nuance.
 
 ## Capabilities That Require GenAI
 
@@ -12,7 +12,7 @@ Rebutter evaluates arbitrary clinical claims against a patient's medical record,
 
 Clinical notes contain critical information that exists only in narrative form -- not as structured codes or discrete data elements.
 
-**Examples from Rebutter's test scenarios:**
+**Examples from Attest's test scenarios:**
 
 - A progress note stating a patient is a Jehovah's Witness and declines blood transfusion. There is no ICD-10 code or FHIR flag for "religious objection to transfusion." The refusal is expressed in the physician's narrative documentation, including direct patient quotes, discussion of alternatives, and documentation of capacity.
 
@@ -24,7 +24,7 @@ A rule-based system would need to enumerate every possible way a clinician might
 
 ### 2. Claim Decomposition Into Verifiable Assertions
 
-When an upstream agent claims "the patient should receive a blood transfusion for iron-deficiency anemia," Rebutter must decompose this into sub-assertions:
+When an upstream agent claims "the patient should receive a blood transfusion for iron-deficiency anemia," Attest must decompose this into sub-assertions:
 
 - Does the patient have iron-deficiency anemia? (verifiable against labs and conditions)
 - Is blood transfusion a valid treatment? (medical knowledge)
@@ -35,9 +35,9 @@ This decomposition is claim-dependent. A claim about insulin requires different 
 
 ### 3. Semantic Evidence Evaluation Against Natural Language Claims
 
-Once evidence is retrieved, Rebutter must determine whether each piece of evidence is relevant to the claim and whether it supports or contradicts it.
+Once evidence is retrieved, Attest must determine whether each piece of evidence is relevant to the claim and whether it supports or contradicts it.
 
-**Example:** A note states the patient "does not want a tube put in my stomach." Rebutter must understand that:
+**Example:** A note states the patient "does not want a tube put in my stomach." Attest must understand that:
 - "tube in my stomach" refers to PEG tube / feeding tube (not an NG tube, not a chest tube)
 - "does not want" is a refusal, not a description of a past event
 - This is the patient speaking (quoted), not the physician speculating
@@ -47,12 +47,12 @@ Semantic matching at this level -- understanding clinical context, speaker attri
 
 ### 4. Nuanced Reasoning About Evidence Weight and Relevance
 
-Not all evidence is equal. Rebutter must weigh:
+Not all evidence is equal. Attest must weigh:
 
 - **Recency**: A 2024 goals-of-care note may supersede a 2022 preference if the patient changed their mind. But a 2022 advance directive that was never revoked still applies.
 - **Specificity**: A note about declining "all blood products" is stronger evidence than a general note about the patient's religious faith.
 - **Source**: A documented conversation with the patient (with capacity assessment) carries more weight than a nursing intake note mentioning the patient's religion.
-- **Scope**: A patient who declines chemotherapy may still accept palliative radiation. Rebutter must reason about the boundaries of a refusal.
+- **Scope**: A patient who declines chemotherapy may still accept palliative radiation. Attest must reason about the boundaries of a refusal.
 
 This multi-factor weighing cannot be reduced to a scoring formula because the relevant factors change with every claim and every evidence document.
 
@@ -75,7 +75,7 @@ Rule-based systems are appropriate for:
 - Verifying lab value thresholds (critical value notifications)
 - Enforcing formulary restrictions based on coded diagnoses
 
-These work because both the input (structured code) and the rule (if-then logic) operate in the same discrete space. Rebutter's problem space includes unstructured text, open-ended claims, and contextual reasoning that falls outside this model.
+These work because both the input (structured code) and the rule (if-then logic) operate in the same discrete space. Attest's problem space includes unstructured text, open-ended claims, and contextual reasoning that falls outside this model.
 
 ## Summary
 

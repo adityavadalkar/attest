@@ -1,8 +1,8 @@
-# Rebutter
+# Attest
 
 **Second-opinion clinical claim verification for healthcare AI agents.**
 
-Rebutter independently checks clinical claims from other AI agents against the patient's FHIR record and returns an evidence-grounded verdict: **CONCUR**, **REBUT**, or **INSUFFICIENT_EVIDENCE** — each backed by cited FHIR resources.
+Attest independently checks clinical claims from other AI agents against the patient's FHIR record and returns an evidence-grounded verdict: **CONCUR**, **REBUT**, or **INSUFFICIENT_EVIDENCE** — each backed by cited FHIR resources.
 
 Built for the [Agents Assemble](https://agents-assemble.devpost.com/) hackathon on the [Prompt Opinion](https://promptopinion.ai) platform.
 
@@ -11,18 +11,18 @@ Built for the [Agents Assemble](https://agents-assemble.devpost.com/) hackathon 
 ```
 Upstream Agent (e.g., Prior Auth)
   → produces confident clinical claim
-    → Rebutter Agent (A2A consultation)
-      → Rebutter MCP Server (SHARP-compliant tool calls)
+    → Attest Agent (A2A consultation)
+      → Attest MCP Server (SHARP-compliant tool calls)
         → FHIR Server (queries with forwarded token)
       ← Evidence results
     ← Verdict with FHIR citations
 ```
 
-**Example:** A Prior Auth Agent approves a blood transfusion based on lab values. Rebutter searches the full chart and finds a 2023 progress note documenting the patient's religious objection to transfusion. Verdict: **REBUT** — with the exact DocumentReference citation and a recommended action: "Confirm current patient preference regarding transfusion alternatives before proceeding."
+**Example:** A Prior Auth Agent approves a blood transfusion based on lab values. Attest searches the full chart and finds a 2023 progress note documenting the patient's religious objection to transfusion. Verdict: **REBUT** — with the exact DocumentReference citation and a recommended action: "Confirm current patient preference regarding transfusion alternatives before proceeding."
 
 ## Components
 
-### Path 2: Rebutter MCP Server (`mcp-server/`)
+### Path 2: Attest MCP Server (`mcp-server/`)
 
 Python/FastMCP server exposing 4 tools:
 
@@ -35,7 +35,7 @@ Python/FastMCP server exposing 4 tools:
 
 Deployed on HuggingFace Spaces. SHARP-compliant — receives FHIR context via standard headers.
 
-### Path 1: Rebutter Agent (`rebutter-agent-config/`)
+### Path 1: Attest Agent (`attest-agent-config/`)
 
 Native A2A agent configured in Prompt Opinion. No code — system prompt + skill definitions + MCP tool attachments.
 
@@ -45,8 +45,8 @@ Native A2A agent configured in Prompt Opinion. No code — system prompt + skill
 
 ```bash
 # Clone this repo
-git clone https://github.com/<your-username>/rebutter.git
-cd rebutter/mcp-server
+git clone https://github.com/<your-username>/attest.git
+cd attest/mcp-server
 
 # Set your Anthropic API key
 export ANTHROPIC_API_KEY=your_key_here
@@ -56,8 +56,8 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 7860
 
 # Or build with Docker
-docker build -t rebutter-mcp .
-docker run -p 7860:7860 -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY rebutter-mcp
+docker build -t attest-mcp .
+docker run -p 7860:7860 -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY attest-mcp
 ```
 
 ### Deploy to HuggingFace Spaces
@@ -69,7 +69,7 @@ docker run -p 7860:7860 -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY rebutter-mcp
 
 ### Configure the Agent
 
-Follow the step-by-step instructions in [`rebutter-agent-config/setup-instructions.md`](rebutter-agent-config/setup-instructions.md).
+Follow the step-by-step instructions in [`attest-agent-config/setup-instructions.md`](attest-agent-config/setup-instructions.md).
 
 ### Load Test Data
 
@@ -78,13 +78,13 @@ See [`test-data/README.md`](test-data/README.md) for importing synthetic patient
 ## Project Structure
 
 ```
-rebutter/
+attest/
 ├── mcp-server/              # FastMCP server (Path 2)
 │   ├── server.py            # Tool registration + FHIR scope declaration
 │   ├── main.py              # FastAPI entry point
 │   ├── tools/               # 4 MCP tools
 │   └── lib/                 # SHARP context, FHIR client, LLM reasoning
-├── rebutter-agent-config/   # Agent configuration (Path 1)
+├── attest-agent-config/   # Agent configuration (Path 1)
 │   ├── system-prompt.md     # The agent's brain
 │   ├── skill-definitions.md # A2A skills
 │   └── setup-instructions.md

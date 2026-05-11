@@ -1,19 +1,19 @@
-# Rebutter Architecture
+# Attest Architecture
 
 ## System Components
 
-### 1. MCP Server (`rebutter-mcp-server`)
+### 1. MCP Server (`attest-mcp-server`)
 
-The Model Context Protocol server that exposes Rebutter's capabilities as tools. It receives claims from upstream agents and orchestrates evidence gathering and verdict synthesis.
+The Model Context Protocol server that exposes Attest's capabilities as tools. It receives claims from upstream agents and orchestrates evidence gathering and verdict synthesis.
 
 **Responsibilities:**
 - Accept incoming tool calls with claim text and patient context
 - Extract SHARP headers (FHIR server URL, access token, patient ID) from the MCP request context
 - Forward authenticated FHIR queries to gather evidence
-- Invoke the Rebutter Agent for reasoning
+- Invoke the Attest Agent for reasoning
 - Return structured verdicts to the calling agent
 
-### 2. Rebutter Agent (LLM-powered)
+### 2. Attest Agent (LLM-powered)
 
 The GenAI reasoning core. Receives a claim, patient context, and retrieved evidence, then produces a structured verdict.
 
@@ -26,7 +26,7 @@ The GenAI reasoning core. Receives a claim, patient context, and retrieved evide
 
 ### 3. Upstream Agent (caller)
 
-Any clinical decision support agent that calls Rebutter for a second opinion. The upstream agent makes a clinical claim (e.g., "recommend blood transfusion") and receives a structured rebuttal or concurrence.
+Any clinical decision support agent that calls Attest for a second opinion. The upstream agent makes a clinical claim (e.g., "recommend blood transfusion") and receives a structured rebuttal or concurrence.
 
 ### 4. FHIR Server
 
@@ -37,7 +37,7 @@ A FHIR R4-compliant server (e.g., HAPI FHIR, Prompt Opinion platform) that store
 ```
 +------------------+       MCP Tool Call        +------------------+
 |                  |  (claim + SHARP headers)   |                  |
-|  Upstream Agent  | =========================> |  Rebutter MCP    |
+|  Upstream Agent  | =========================> |  Attest MCP    |
 |  (Caller)        |                            |  Server          |
 |                  | <========================= |                  |
 +------------------+    Structured Verdict      +--------+---------+
@@ -58,7 +58,7 @@ A FHIR R4-compliant server (e.g., HAPI FHIR, Prompt Opinion platform) that store
                                                          |
                                                 +--------v---------+
                                                 |                  |
-                                                |  Rebutter Agent  |
+                                                |  Attest Agent  |
                                                 |  (LLM Reasoning) |
                                                 |                  |
                                                 +------------------+
@@ -82,7 +82,7 @@ Upstream Agent
   |-- x-patient-id: patient-janet-williams
   |
   v
-Rebutter MCP Server
+Attest MCP Server
   |-- Extracts headers from MCP request context
   |-- Uses x-fhir-access-token for all FHIR API calls
   |-- Scopes queries to x-patient-id
@@ -97,7 +97,7 @@ FHIR Server
 
 ## Tool Descriptions
 
-### `rebutter_evaluate_claim`
+### `attest_evaluate_claim`
 
 Primary tool exposed by the MCP server.
 
@@ -112,9 +112,9 @@ Primary tool exposed by the MCP server.
 - `evidence` (array): List of evidence items with FHIR resource references, relevance scores, and excerpts
 - `suggested_next_steps` (array): Clinician-attestable actions (phrased as "consider," "review," "verify")
 
-### `rebutter_search_notes`
+### `attest_search_notes`
 
-Internal tool used by the Rebutter Agent to search DocumentReferences.
+Internal tool used by the Attest Agent to search DocumentReferences.
 
 **Input:**
 - `patient_id` (string): FHIR patient ID
@@ -124,7 +124,7 @@ Internal tool used by the Rebutter Agent to search DocumentReferences.
 **Output:**
 - Array of DocumentReference resources with decoded note text
 
-### `rebutter_get_patient_context`
+### `attest_get_patient_context`
 
 Internal tool that retrieves structured clinical data for the patient.
 
@@ -137,7 +137,7 @@ Internal tool that retrieves structured clinical data for the patient.
 
 ## Verdict Synthesis
 
-The Rebutter Agent follows a structured reasoning process:
+The Attest Agent follows a structured reasoning process:
 
 1. **Claim Decomposition**: Break the upstream claim into discrete, verifiable assertions. For example, "Recommend blood transfusion for anemia" becomes:
    - The patient has anemia

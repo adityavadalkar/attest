@@ -1,8 +1,8 @@
-# Rebutter Agent — Tool Attachments
+# Attest Agent — Tool Attachments
 
 ## MCP Tools to Attach
 
-The Rebutter agent requires the following MCP tools from the **Rebutter MCP Server**:
+The Attest agent requires the following MCP tools from the **Attest MCP Server**:
 
 | Tool Name | Purpose |
 |-----------|---------|
@@ -15,9 +15,9 @@ The Rebutter agent requires the following MCP tools from the **Rebutter MCP Serv
 
 In the Prompt Opinion Workspace Hub:
 
-1. Register the Rebutter MCP Server endpoint (HuggingFace Spaces URL)
+1. Register the Attest MCP Server endpoint (HuggingFace Spaces URL)
 2. Enable **"Pass FHIR Token"** toggle — this is critical for SHARP context propagation
-3. All four tools should be attached to the Rebutter agent
+3. All four tools should be attached to the Attest agent
 4. The MCP server declares FHIR scopes via capabilities:
    - `patient/Patient.rs` (required)
    - `patient/Condition.rs`

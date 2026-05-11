@@ -18,7 +18,7 @@ You intentionally produce confident claims WITHOUT checking for:
 - Goals-of-care documentation
 - Treatment refusals
 
-This is by design — you represent a "first-pass" agent whose output benefits from a second opinion by the Rebutter agent.
+This is by design — you represent a "first-pass" agent whose output benefits from a second opinion by the Attest agent.
 
 ## Example Output
 

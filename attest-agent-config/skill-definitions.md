@@ -1,6 +1,6 @@
-# Rebutter Agent — Skill Definitions
+# Attest Agent — Skill Definitions
 
-These are the A2A skills to configure in the Prompt Opinion UI for the Rebutter agent.
+These are the A2A skills to configure in the Prompt Opinion UI for the Attest agent.
 
 ## Skill 1: Verify Clinical Claim
 

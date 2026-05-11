@@ -1,6 +1,6 @@
-# Rebutter Test Data
+# Attest Test Data
 
-Synthetic FHIR R4 test data for demonstrating the Rebutter second-opinion agent.
+Synthetic FHIR R4 test data for demonstrating the Attest second-opinion agent.
 
 ## Contents
 
@@ -10,14 +10,14 @@ Transaction bundles containing Patient, Condition, Observation, MedicationReques
 
 ### Planted Notes (`planted-notes/`)
 
-FHIR DocumentReference resources containing clinical note text (base64-encoded in `content[0].attachment.data`). These notes serve as evidence that Rebutter discovers when evaluating upstream claims.
+FHIR DocumentReference resources containing clinical note text (base64-encoded in `content[0].attachment.data`). These notes serve as evidence that Attest discovers when evaluating upstream claims.
 
 | File | Patient | Date | Scenario |
 |------|---------|------|----------|
-| `janet_2023_religious_objection_transfusion.json` | Janet Williams | 2023-11-15 | Religious objection to blood transfusion (Jehovah's Witness). Rebutter should flag this if an upstream agent recommends transfusion. |
-| `robert_2022_advance_directive_no_feeding_tube.json` | Robert Chen | 2022-08-20 | Advance directive declining feeding tube / artificial nutrition under all circumstances. Rebutter should flag this if PEG placement is recommended. |
-| `maria_2024_goals_of_care_meeting.json` | Maria Santos | 2024-03-10 | Goals-of-care meeting where patient wants aggressive diabetes management and insulin intensification. Rebutter should CONCUR with claims recommending treatment escalation. |
-| `david_2024_comfort_measures_only.json` | David Okonkwo | 2024-01-22 | Family meeting electing comfort measures only, DNR/DNI, hospice. Rebutter should flag this if aggressive treatment or chemotherapy is recommended. |
+| `janet_2023_religious_objection_transfusion.json` | Janet Williams | 2023-11-15 | Religious objection to blood transfusion (Jehovah's Witness). Attest should flag this if an upstream agent recommends transfusion. |
+| `robert_2022_advance_directive_no_feeding_tube.json` | Robert Chen | 2022-08-20 | Advance directive declining feeding tube / artificial nutrition under all circumstances. Attest should flag this if PEG placement is recommended. |
+| `maria_2024_goals_of_care_meeting.json` | Maria Santos | 2024-03-10 | Goals-of-care meeting where patient wants aggressive diabetes management and insulin intensification. Attest should CONCUR with claims recommending treatment escalation. |
+| `david_2024_comfort_measures_only.json` | David Okonkwo | 2024-01-22 | Family meeting electing comfort measures only, DNR/DNI, hospice. Attest should flag this if aggressive treatment or chemotherapy is recommended. |
 
 ## Import Instructions
 
@@ -71,28 +71,28 @@ Confirm each patient record shows the expected conditions, observations, and lin
 ### Scenario 1: Janet Williams -- Religious Objection to Transfusion
 
 - **Upstream claim**: "Patient should receive blood transfusion to treat iron-deficiency anemia"
-- **Expected Rebutter verdict**: DISAGREE
+- **Expected Attest verdict**: DISAGREE
 - **Evidence**: Progress note from 2023-11-15 documents patient's Jehovah's Witness faith and explicit refusal of all blood products. Advance directive on file.
 - **Key point**: The objection is in free-text narrative, not a structured code -- demonstrating why GenAI is needed.
 
 ### Scenario 2: Robert Chen -- Advance Directive Against Feeding Tube
 
 - **Upstream claim**: "PEG tube placement is recommended for nutritional support"
-- **Expected Rebutter verdict**: DISAGREE
+- **Expected Attest verdict**: DISAGREE
 - **Evidence**: Advance care planning note from 2022-08-20 documents explicit refusal of feeding tube under all circumstances. Daughter Susan Chen witnessed and supports.
 - **Key point**: The directive predates the current encounter, requiring temporal reasoning across documents.
 
 ### Scenario 3: Maria Santos -- Supports Aggressive Diabetes Management
 
 - **Upstream claim**: "Recommend insulin intensification with basal insulin glargine to improve glycemic control"
-- **Expected Rebutter verdict**: CONCUR
+- **Expected Attest verdict**: CONCUR
 - **Evidence**: Goals-of-care note from 2024-03-10 confirms patient actively wants aggressive management, is willing to start insulin, and has enrolled in education programs.
-- **Key point**: Rebutter does not only disagree -- it can find evidence that supports a claim and concur with confidence.
+- **Key point**: Attest does not only disagree -- it can find evidence that supports a claim and concur with confidence.
 
 ### Scenario 4: David Okonkwo -- Comfort Measures Only
 
 - **Upstream claim**: "Consider third-line chemotherapy regimen for disease control"
-- **Expected Rebutter verdict**: DISAGREE
+- **Expected Attest verdict**: DISAGREE
 - **Evidence**: Family meeting note from 2024-01-22 documents patient and family election of comfort measures only, DNR/DNI, hospice referral, and explicit decline of further chemotherapy.
 - **Key point**: Multiple decision points (CMO, DNR/DNI, no chemo, no ICU) are documented in a single narrative note.
 

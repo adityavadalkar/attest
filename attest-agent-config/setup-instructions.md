@@ -1,11 +1,11 @@
-# Rebutter Agent — Setup Instructions
+# Attest Agent — Setup Instructions
 
-Step-by-step guide to configure the Rebutter agent natively in Prompt Opinion.
+Step-by-step guide to configure the Attest agent natively in Prompt Opinion.
 
 ## Prerequisites
 
 - A Prompt Opinion account (free tier is sufficient)
-- The Rebutter MCP Server deployed and accessible (e.g., on HuggingFace Spaces)
+- The Attest MCP Server deployed and accessible (e.g., on HuggingFace Spaces)
 - At least one test patient loaded into the platform's FHIR server
 
 ---
@@ -15,18 +15,18 @@ Step-by-step guide to configure the Rebutter agent natively in Prompt Opinion.
 1. Go to **Workspace Hub** in Prompt Opinion
 2. Click **"Add MCP Server"**
 3. Enter:
-   - **Name:** `Rebutter MCP Server`
+   - **Name:** `Attest MCP Server`
    - **URL:** `https://<your-hf-space>.hf.space/mcp`
    - **Description:** Evidence retrieval tools for clinical claim verification. Searches FHIR records for supporting/refuting evidence and documented patient preferences.
 4. **Enable "Pass FHIR Token"** toggle — CRITICAL for SHARP header propagation
 5. Save and verify the server connects (green status indicator)
 
-## Step 2: Create the Rebutter Agent
+## Step 2: Create the Attest Agent
 
 1. Go to **Agent Builder** in Prompt Opinion
 2. Click **"Create New Agent"**
 3. Configure:
-   - **Name:** `Rebutter`
+   - **Name:** `Attest`
    - **Description:** Second-opinion clinical claim verification agent. Independently checks claims from other agents against the patient's FHIR record and returns a verdict (CONCUR, REBUT, or INSUFFICIENT_EVIDENCE) grounded in cited FHIR resources.
    - **Type:** A2A Agent (Path 1 — native)
 4. Paste the full system prompt from `system-prompt.md`
@@ -35,7 +35,7 @@ Step-by-step guide to configure the Rebutter agent natively in Prompt Opinion.
 
 1. In the agent configuration, go to **"Tools"** section
 2. Click **"Add Tools"**
-3. Select the Rebutter MCP Server
+3. Select the Attest MCP Server
 4. Attach all four tools:
    - `SearchSupportingEvidence`
    - `SearchRefutingEvidence`
@@ -61,7 +61,7 @@ Step-by-step guide to configure the Rebutter agent natively in Prompt Opinion.
 
 1. Open **General Chat** in Prompt Opinion
 2. Select a test patient (e.g., Janet Williams)
-3. Invoke the Rebutter agent via A2A with a test claim:
+3. Invoke the Attest agent via A2A with a test claim:
    - "The Prior Auth Agent recommends blood transfusion for this patient"
 4. Verify:
    - SHARP headers propagate (check MCP server logs)
