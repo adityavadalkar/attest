@@ -1,0 +1,46 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "note-janet-religious-objection-transfusion",
+  "status": "current",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11506-3",
+        "display": "Progress note"
+      }
+    ],
+    "text": "Progress note"
+  },
+  "subject": {
+    "reference": "Patient/pat-janet-williams-001",
+    "display": "Janet Williams"
+  },
+  "date": "2023-11-15T14:32:00-05:00",
+  "author": [
+    {
+      "reference": "Practitioner/dr-sarah-patel",
+      "display": "Dr. Sarah Patel, MD"
+    }
+  ],
+  "description": "Progress note documenting patient religious objection to blood transfusion (Jehovah's Witness faith), alternatives discussed, advance directive on file.",
+  "content": [
+    {
+      "attachment": {
+        "contentType": "text/plain",
+        "data": "UFJPR1JFU1MgTk9URQpEYXRlOiAyMDIzLTExLTE1ClBhdGllbnQ6IEphbmV0IFdpbGxpYW1zCk1STjogSlctMjAyMzExMTUKUHJvdmlkZXI6IERyLiBTYXJhaCBQYXRlbCwgTUQgLSBJbnRlcm5hbCBNZWRpY2luZQoKQ0hJRUYgQ09OQ0VSTjoKUGF0aWVudC1pbml0aWF0ZWQgZGlzY3Vzc2lvbiByZWdhcmRpbmcgYmxvb2QgcHJvZHVjdCBhZG1pbmlzdHJhdGlvbiBwcmVmZXJlbmNlcy4KCkhJU1RPUlkgT0YgUFJFU0VOVCBWSVNJVDoKTXMuIFdpbGxpYW1zLCBhIDUyLXllYXItb2xkIGZlbWFsZSB3aXRoIGEgaGlzdG9yeSBvZiBpcm9uLWRlZmljaWVuY3kgYW5lbWlhIGFuZCBtZW5vcnJoYWdpYSwgcHJlc2VudGVkIGZvciByb3V0aW5lIGZvbGxvdy11cC4gRHVyaW5nIHRoZSB2aXNpdCwgc2hlIHJhaXNlZCBjb25jZXJucyBhYm91dCB0aGUgcG9zc2liaWxpdHkgb2YgcmVxdWlyaW5nIGJsb29kIHRyYW5zZnVzaW9uIGluIHRoZSBmdXR1cmUgZ2l2ZW4gaGVyIGNocm9uaWMgYW5lbWlhLiBTaGUgc3RhdGVkIGNsZWFybHkgdGhhdCBzaGUgaXMgYSBwcmFjdGljaW5nIEplaG92YWgncyBXaXRuZXNzIGFuZCB0aGF0IGhlciBmYWl0aCBwcm9oaWJpdHMgdGhlIGFjY2VwdGFuY2Ugb2YgYWxsb2dlbmVpYyBibG9vZCB0cmFuc2Z1c2lvbnMsIGluY2x1ZGluZyBwYWNrZWQgcmVkIGJsb29kIGNlbGxzLCB3aG9sZSBibG9vZCwgZnJlc2ggZnJvemVuIHBsYXNtYSwgYW5kIHBsYXRlbGV0cy4KCkRJU0NVU1NJT046CkkgZGlzY3Vzc2VkIHdpdGggTXMuIFdpbGxpYW1zIHRoZSBjbGluaWNhbCBpbXBsaWNhdGlvbnMgb2YgZGVjbGluaW5nIGJsb29kIHRyYW5zZnVzaW9uLCBpbmNsdWRpbmc6CjEuIFJpc2sgb2Ygc2V2ZXJlIGFuZW1pYSBjb21wbGljYXRpb25zIGlmIHN1cmdpY2FsIGludGVydmVudGlvbiBpcyBuZWVkZWQKMi4gUmlzayBkdXJpbmcgYWN1dGUgaGVtb3JyaGFnaWMgZXZlbnRzCjMuIExpbWl0YXRpb25zIG9uIGNlcnRhaW4gc3VyZ2ljYWwgcHJvY2VkdXJlcyB3aXRob3V0IHRyYW5zZnVzaW9uIHN1cHBvcnQKCk1zLiBXaWxsaWFtcyBkZW1vbnN0cmF0ZWQgY2xlYXIgdW5kZXJzdGFuZGluZyBvZiB0aGVzZSByaXNrcy4gU2hlIHdhcyBhbGVydCwgb3JpZW50ZWQsIGFuZCBkZW1vbnN0cmF0ZWQgZnVsbCBkZWNpc2lvbi1tYWtpbmcgY2FwYWNpdHkuIFNoZSBzdGF0ZWQ6ICJJIGhhdmUgdGhvdWdodCBhYm91dCB0aGlzIGRlZXBseSBhbmQgZGlzY3Vzc2VkIGl0IHdpdGggbXkgZmFtaWx5IGFuZCBteSBmYWl0aCBjb21tdW5pdHkuIFRoaXMgaXMgYSBkZWVwbHkgaGVsZCByZWxpZ2lvdXMgY29udmljdGlvbiBhbmQgSSBkbyBub3Qgd2lzaCB0byByZWNlaXZlIGJsb29kIHByb2R1Y3RzIHVuZGVyIGFueSBjaXJjdW1zdGFuY2VzLCBldmVuIGlmIG15IGxpZmUgaXMgYXQgcmlzay4iCgpBTFRFUk5BVElWRVMgRElTQ1VTU0VEOgotIElyb24gaW5mdXNpb24gdGhlcmFweSAoSVYgaXJvbiBzdWNyb3NlIG9yIGZlcnJpYyBjYXJib3h5bWFsdG9zZSkKLSBFcnl0aHJvcG9pZXNpcy1zdGltdWxhdGluZyBhZ2VudHMgKGVwb2V0aW4gYWxmYSkKLSBDZWxsIHNhbHZhZ2UgdGVjaG5pcXVlcyBkdXJpbmcgc3VyZ2VyeSAocGF0aWVudCBkZWNsaW5lZCB0aGlzIGFzIHdlbGwpCi0gQWN1dGUgbm9ybW92b2xlbWljIGhlbW9kaWx1dGlvbiAocGF0aWVudCBkZWNsaW5lZCkKLSBBbnRpZmlicmlub2x5dGljIGFnZW50cyAodHJhbmV4YW1pYyBhY2lkKSAtIHBhdGllbnQgYWNjZXB0cwotIFZvbHVtZSBleHBhbmRlcnMgKGNyeXN0YWxsb2lkcywgY29sbG9pZHMpIC0gcGF0aWVudCBhY2NlcHRzCgpQQVRJRU5UIFdJU0hFUyBET0NVTUVOVEVEOgpQYXRpZW50IGRlY2xpbmVzOiBBbGwgYWxsb2dlbmVpYyBibG9vZCBwcm9kdWN0cyAoUkJDcywgcGxhdGVsZXRzLCBGRlAsIGNyeW9wcmVjaXBpdGF0ZSwgd2hvbGUgYmxvb2QpClBhdGllbnQgZGVjbGluZXM6IEF1dG9sb2dvdXMgcHJlLWRvbmF0aW9uClBhdGllbnQgZGVjbGluZXM6IENlbGwgc2FsdmFnZSAvIGludHJhb3BlcmF0aXZlIGJsb29kIHJlY292ZXJ5ClBhdGllbnQgYWNjZXB0czogTm9uLWJsb29kIHZvbHVtZSBleHBhbmRlcnMsIGlyb24gaW5mdXNpb25zLCBFU0FzLCBhbnRpZmlicmlub2x5dGljcwoKQSBjb3B5IG9mIHRoZSBwYXRpZW50J3MgQWR2YW5jZSBEaXJlY3RpdmUgcmVnYXJkaW5nIGJsb29kIHByb2R1Y3RzLCBzaWduZWQgYW5kIHdpdG5lc3NlZCwgaGFzIGJlZW4gc2Nhbm5lZCBpbnRvIHRoZSBtZWRpY2FsIHJlY29yZC4gVGhlIHBhdGllbnQgYWxzbyBjYXJyaWVzIGEgSGVhbHRoIENhcmUgUG93ZXIgb2YgQXR0b3JuZXkgY2FyZCBzcGVjaWZ5aW5nIHRoZXNlIHdpc2hlcy4gSGVyIGhlYWx0aGNhcmUgcHJveHkgKHNpc3RlciwgTWFyZ2FyZXQgV2lsbGlhbXMpIGlzIGF3YXJlIG9mIGFuZCBzdXBwb3J0cyB0aGVzZSBwcmVmZXJlbmNlcy4KCkFTU0VTU01FTlQ6ClBhdGllbnQgaGFzIGNsZWFybHkgYXJ0aWN1bGF0ZWQgcmVsaWdpb3VzIG9iamVjdGlvbiB0byBibG9vZCB0cmFuc2Z1c2lvbiBiYXNlZCBvbiBKZWhvdmFoJ3MgV2l0bmVzcyBmYWl0aC4gRGVjaXNpb24gaXMgaW5mb3JtZWQsIHZvbHVudGFyeSwgYW5kIG1hZGUgd2l0aCBmdWxsIGNhcGFjaXR5LiBBbHRlcm5hdGl2ZXMgaGF2ZSBiZWVuIGRpc2N1c3NlZCBhbmQgZG9jdW1lbnRlZC4KClBMQU46CjEuIENvbnRpbnVlIGlyb24gc3VwcGxlbWVudGF0aW9uIChmZXJyb3VzIHN1bGZhdGUgMzI1bWcgQklEKQoyLiBTY2hlZHVsZSBJViBpcm9uIGluZnVzaW9uIHNlcmllcyAoZmVycmljIGNhcmJveHltYWx0b3NlIDc1MG1nIHgyKQozLiBSZWNoZWNrIENCQyBpbiA0IHdlZWtzCjQuIEZsYWcgY2hhcnQgZm9yIHRyYW5zZnVzaW9uIHJlZnVzYWwgLSBlbnN1cmUgc3VyZ2ljYWwgYW5kIGVtZXJnZW5jeSB0ZWFtcyBhcmUgYXdhcmUKNS4gQWR2YW5jZSBEaXJlY3RpdmUgb24gZmlsZSBhbmQgYWNjZXNzaWJsZSBpbiBFTVIKCkVsZWN0cm9uaWNhbGx5IHNpZ25lZCBieTogRHIuIFNhcmFoIFBhdGVsLCBNRApEYXRlL1RpbWU6IDIwMjMtMTEtMTUgMTQ6MzIgRVNU"
+      }
+    }
+  ],
+  "context": {
+    "encounter": [
+      {
+        "reference": "Encounter/enc-janet-williams-20231115"
+      }
+    ],
+    "period": {
+      "start": "2023-11-15",
+      "end": "2023-11-15"
+    }
+  }
+}

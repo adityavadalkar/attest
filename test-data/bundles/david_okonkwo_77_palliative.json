@@ -1,0 +1,723 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-david-okonkwo-palliative",
+  "type": "batch",
+  "timestamp": "2026-05-10T08:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:po:pat-david-okonkwo-004",
+      "resource": {
+        "resourceType": "Patient",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>David Okonkwo, 77-year-old male. DOB: 1948-12-30. MRN: DO-20240203.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/mrn",
+            "value": "DO-20240203"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Okonkwo",
+            "given": [
+              "David"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1948-12-30",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "91 Birchwood Lane"
+            ],
+            "city": "Atlanta",
+            "state": "GA",
+            "postalCode": "30312"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-do-nsclc-001",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Stage IV non-small cell lung cancer (NSCLC), adenocarcinoma. Diagnosed 2025-01-18. Metastatic to liver and bone.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254637007",
+              "display": "Non-small cell lung cancer"
+            }
+          ],
+          "text": "Stage IV NSCLC (adenocarcinoma)"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "onsetDateTime": "2025-01-18",
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "73082003",
+                  "display": "Stage IV"
+                }
+              ],
+              "text": "Stage IV - metastatic to liver and bone"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Adenocarcinoma of right upper lobe with metastases to liver (3 lesions) and thoracic spine (T8, T10). EGFR/ALK negative. PD-L1 expression 15%. Completed 4 cycles of carboplatin/pemetrexed with disease progression on restaging CT 2025-09-20."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-do-copd-002",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Chronic obstructive pulmonary disease (COPD), severe. FEV1 35% predicted. Diagnosed 2018-04-20.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13645005",
+              "display": "Chronic obstructive lung disease"
+            }
+          ],
+          "text": "COPD, severe (FEV1 35% predicted)"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "onsetDateTime": "2018-04-20",
+        "note": [
+          {
+            "text": "Former smoker (45 pack-year history, quit 2024). Severe airflow limitation. On home oxygen 2L continuous."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-do-cachexia-003",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Cancer cachexia. Unintentional weight loss of 28 lbs over 6 months. Diagnosed 2026-01-10.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "238108007",
+              "display": "Cachexia"
+            }
+          ],
+          "text": "Cancer cachexia"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "onsetDateTime": "2026-01-10"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-do-pain-004",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Chronic cancer pain, primarily thoracic spine (bone metastases). Average pain score 6/10 on current regimen.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363346000",
+              "display": "Malignant neoplastic pain"
+            }
+          ],
+          "text": "Chronic cancer pain"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "onsetDateTime": "2025-08-15"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-do-morphine-001",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Morphine sulfate ER 30 mg oral every 12 hours for chronic cancer pain. Morphine IR 15 mg oral every 4 hours as needed for breakthrough pain.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "863845",
+              "display": "Morphine Sulfate 30 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Morphine sulfate ER 30 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "authoredOn": "2025-10-01",
+        "dosageInstruction": [
+          {
+            "text": "Take 30 mg by mouth every 12 hours. For breakthrough pain: 15 mg IR every 4 hours as needed."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-do-ondansetron-002",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ondansetron 4 mg oral every 8 hours as needed for nausea.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "312086",
+              "display": "Ondansetron 4 MG Oral Tablet"
+            }
+          ],
+          "text": "Ondansetron 4 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "authoredOn": "2025-10-01",
+        "dosageInstruction": [
+          {
+            "text": "Take 4 mg by mouth every 8 hours as needed for nausea"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-do-dexamethasone-003",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dexamethasone 4 mg oral daily for appetite stimulation and anti-inflammatory effect.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197577",
+              "display": "Dexamethasone 4 MG Oral Tablet"
+            }
+          ],
+          "text": "Dexamethasone 4 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "authoredOn": "2026-01-15",
+        "dosageInstruction": [
+          {
+            "text": "Take 4 mg by mouth once daily in the morning"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-do-oxygen-004",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Home oxygen therapy 2L/min via nasal cannula continuous.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "426174004",
+              "display": "Home oxygen therapy"
+            }
+          ],
+          "text": "Home oxygen 2L/min continuous"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "authoredOn": "2025-06-01",
+        "dosageInstruction": [
+          {
+            "text": "2 liters per minute via nasal cannula, continuous use"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-do-ecog-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECOG Performance Status: 3 (2026-04-15). Capable of only limited self-care, confined to bed or chair more than 50% of waking hours.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1",
+              "display": "ECOG Performance Status"
+            }
+          ],
+          "text": "ECOG Performance Status"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueInteger": 3,
+        "note": [
+          {
+            "text": "ECOG 3: Capable of only limited self-care, confined to bed or chair more than 50% of waking hours. Declining from ECOG 2 assessed 2025-12-10."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-do-weight-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Weight: 168 lbs (2025-07-10).</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body Weight"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "effectiveDateTime": "2025-07-10",
+        "valueQuantity": {
+          "value": 76.2,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-do-weight-002",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Weight: 149 lbs (2026-01-10). Significant unintentional weight loss.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body Weight"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "effectiveDateTime": "2026-01-10",
+        "valueQuantity": {
+          "value": 67.6,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-do-weight-003",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Weight: 132 lbs (2026-04-15). Continued cachexia-related weight loss.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body Weight"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueQuantity": {
+          "value": 59.9,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-do-albumin-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Albumin: 2.1 g/dL (2026-04-15). Severely low, indicative of malnutrition and poor prognosis.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1751-7",
+              "display": "Albumin [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Albumin"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.5,
+              "unit": "g/dL"
+            },
+            "high": {
+              "value": 5.5,
+              "unit": "g/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:proc-do-chemo-001",
+      "resource": {
+        "resourceType": "Procedure",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>First-line chemotherapy: Carboplatin/Pemetrexed x4 cycles (2025-03 to 2025-08). Discontinued due to disease progression on restaging imaging.</p></div>"
+        },
+        "status": "stopped",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Chemotherapy"
+            }
+          ],
+          "text": "Carboplatin/Pemetrexed chemotherapy"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "performedPeriod": {
+          "start": "2025-03-01",
+          "end": "2025-08-15"
+        },
+        "outcome": {
+          "text": "Disease progression after 4 cycles. New hepatic lesion identified. Treatment discontinued."
+        },
+        "note": [
+          {
+            "text": "Patient tolerated chemotherapy poorly with significant fatigue, nausea, and weight loss. Restaging CT showed progression with new liver metastasis. Oncology team and patient jointly decided to discontinue further systemic therapy."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:po:proc-do-palliativeRT-002",
+      "resource": {
+        "resourceType": "Procedure",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Palliative radiation therapy to thoracic spine (T8, T10) for pain control. 10 fractions completed 2025-11-20.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiation therapy"
+            }
+          ],
+          "text": "Palliative radiation therapy to thoracic spine"
+        },
+        "subject": {
+          "reference": "urn:po:pat-david-okonkwo-004"
+        },
+        "performedPeriod": {
+          "start": "2025-11-05",
+          "end": "2025-11-20"
+        },
+        "outcome": {
+          "text": "Partial pain relief achieved. Pain score decreased from 8/10 to 5/10 at thoracic spine."
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    }
+  ]
+}

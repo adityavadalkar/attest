@@ -1,0 +1,717 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-janet-williams-chf",
+  "type": "batch",
+  "timestamp": "2026-05-10T08:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:po:pat-janet-williams-001",
+      "resource": {
+        "resourceType": "Patient",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Janet Williams, 72-year-old female. DOB: 1953-11-14. MRN: JW-20230041.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/mrn",
+            "value": "JW-20230041"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Williams",
+            "given": [
+              "Janet"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1953-11-14",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "482 Maple Drive"
+            ],
+            "city": "Columbus",
+            "state": "OH",
+            "postalCode": "43215"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-jw-chf-001",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Chronic heart failure, NYHA Class III. Diagnosed 2023-03-12.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "88805009",
+              "display": "Chronic congestive heart failure"
+            }
+          ],
+          "text": "Chronic heart failure, NYHA Class III"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "onsetDateTime": "2023-03-12",
+        "note": [
+          {
+            "text": "Patient has NYHA Class III heart failure with reduced ejection fraction. Significant functional limitation with less than ordinary activity."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-jw-htn-002",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Essential hypertension. Diagnosed 2015-06-20.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59621000",
+              "display": "Essential hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "onsetDateTime": "2015-06-20"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-jw-dm2-003",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Type 2 diabetes mellitus. Diagnosed 2018-01-10.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ],
+          "text": "Type 2 diabetes mellitus"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "onsetDateTime": "2018-01-10"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-jw-anemia-004",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Iron deficiency anemia, severe. Hemoglobin 6.8 g/dL. Diagnosed 2026-04-28.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "87522002",
+              "display": "Iron deficiency anemia"
+            }
+          ],
+          "text": "Severe anemia (Hgb 6.8 g/dL)"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "onsetDateTime": "2026-04-28"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-jw-lisinopril-001",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lisinopril 10 mg oral daily for hypertension and CHF.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "314076",
+              "display": "Lisinopril 10 MG Oral Tablet"
+            }
+          ],
+          "text": "Lisinopril 10 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "authoredOn": "2023-03-12",
+        "dosageInstruction": [
+          {
+            "text": "Take 10 mg by mouth once daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 10,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-jw-metoprolol-002",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Metoprolol succinate 50 mg oral daily for CHF.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "866924",
+              "display": "Metoprolol Succinate 50 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Metoprolol succinate 50 mg ER"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "authoredOn": "2023-03-12",
+        "dosageInstruction": [
+          {
+            "text": "Take 50 mg by mouth once daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-jw-furosemide-003",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Furosemide 40 mg oral daily for fluid management in CHF.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310429",
+              "display": "Furosemide 40 MG Oral Tablet"
+            }
+          ],
+          "text": "Furosemide 40 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "authoredOn": "2023-03-15",
+        "dosageInstruction": [
+          {
+            "text": "Take 40 mg by mouth once daily"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-jw-metformin-004",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Metformin 1000 mg oral twice daily for type 2 diabetes.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "861007",
+              "display": "Metformin 1000 MG Oral Tablet"
+            }
+          ],
+          "text": "Metformin 1000 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "authoredOn": "2018-01-10",
+        "dosageInstruction": [
+          {
+            "text": "Take 1000 mg by mouth twice daily with meals"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-jw-hgb-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hemoglobin: 9.2 g/dL (2025-11-05). Mildly low.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Hemoglobin"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "effectiveDateTime": "2025-11-05",
+        "valueQuantity": {
+          "value": 9.2,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 12.0,
+              "unit": "g/dL"
+            },
+            "high": {
+              "value": 16.0,
+              "unit": "g/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-jw-hgb-002",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hemoglobin: 7.8 g/dL (2026-02-14). Declining trend.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Hemoglobin"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "effectiveDateTime": "2026-02-14",
+        "valueQuantity": {
+          "value": 7.8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-jw-hgb-003",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hemoglobin: 6.8 g/dL (2026-04-28). Critically low, symptomatic anemia.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Hemoglobin"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "effectiveDateTime": "2026-04-28",
+        "valueQuantity": {
+          "value": 6.8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-jw-bnp-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>BNP: 1240 pg/mL (2026-04-28). Markedly elevated, consistent with decompensated CHF.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30934-4",
+              "display": "BNP [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "B-type natriuretic peptide (BNP)"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "effectiveDateTime": "2026-04-28",
+        "valueQuantity": {
+          "value": 1240,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 100,
+              "unit": "pg/mL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-jw-creat-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Creatinine: 1.4 mg/dL (2026-04-28). Mildly elevated.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Creatinine"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "effectiveDateTime": "2026-04-28",
+        "valueQuantity": {
+          "value": 1.4,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.6,
+              "unit": "mg/dL"
+            },
+            "high": {
+              "value": 1.2,
+              "unit": "mg/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:proc-jw-echo-001",
+      "resource": {
+        "resourceType": "Procedure",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Transthoracic echocardiogram performed 2026-04-20. Ejection fraction 30%. Moderate mitral regurgitation. Left ventricular dilation.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40701008",
+              "display": "Echocardiography"
+            }
+          ],
+          "text": "Transthoracic echocardiogram"
+        },
+        "subject": {
+          "reference": "urn:po:pat-janet-williams-001"
+        },
+        "performedDateTime": "2026-04-20",
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371001000",
+              "display": "Reduced ejection fraction"
+            }
+          ],
+          "text": "EF 30%, moderate mitral regurgitation, LV dilation"
+        },
+        "note": [
+          {
+            "text": "Left ventricular ejection fraction estimated at 30%. Moderate mitral regurgitation. Left ventricular internal diameter in diastole 6.2 cm (dilated). No pericardial effusion. Right ventricular function mildly reduced."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    }
+  ]
+}

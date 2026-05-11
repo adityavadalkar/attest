@@ -1,0 +1,732 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-maria-santos-dm",
+  "type": "batch",
+  "timestamp": "2026-05-10T08:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:po:pat-maria-santos-003",
+      "resource": {
+        "resourceType": "Patient",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Maria Santos, 68-year-old female. DOB: 1957-07-03. MRN: MS-20240112.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/mrn",
+            "value": "MS-20240112"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Santos",
+            "given": [
+              "Maria"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1957-07-03",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "734 Elm Avenue"
+            ],
+            "city": "Miami",
+            "state": "FL",
+            "postalCode": "33125"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-ms-dm2-001",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Type 2 diabetes mellitus with complications (neuropathy, retinopathy). Diagnosed 2014-09-22.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "368581000119106",
+              "display": "Type 2 diabetes mellitus with neuropathy"
+            }
+          ],
+          "text": "Type 2 diabetes mellitus with complications"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "onsetDateTime": "2014-09-22",
+        "note": [
+          {
+            "text": "T2DM with peripheral neuropathy (bilateral lower extremities) and non-proliferative diabetic retinopathy. Currently on insulin glargine and metformin. HbA1c improving but still above target."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-ms-neuropathy-002",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Diabetic peripheral neuropathy, bilateral lower extremities. Diagnosed 2020-03-15.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230572002",
+              "display": "Diabetic neuropathy"
+            }
+          ],
+          "text": "Diabetic peripheral neuropathy"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "onsetDateTime": "2020-03-15"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-ms-retinopathy-003",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Non-proliferative diabetic retinopathy, bilateral. Diagnosed 2022-11-08.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "390834004",
+              "display": "Non-proliferative diabetic retinopathy"
+            }
+          ],
+          "text": "Non-proliferative diabetic retinopathy"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "onsetDateTime": "2022-11-08"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-ms-htn-004",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Essential hypertension, well controlled on medication. Diagnosed 2016-02-14.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59621000",
+              "display": "Essential hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "onsetDateTime": "2016-02-14"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:cond-ms-obesity-005",
+      "resource": {
+        "resourceType": "Condition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Obesity, BMI 34. Class I obesity.</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "414916001",
+              "display": "Obesity"
+            }
+          ],
+          "text": "Obesity (BMI 34)"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "onsetDateTime": "2014-09-22"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-ms-insulin-001",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Insulin glargine 28 units subcutaneous at bedtime.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "261551",
+              "display": "Insulin Glargine 100 UNT/ML Injectable Solution"
+            }
+          ],
+          "text": "Insulin glargine 100 units/mL"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "authoredOn": "2023-06-10",
+        "dosageInstruction": [
+          {
+            "text": "Inject 28 units subcutaneously at bedtime"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-ms-metformin-002",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Metformin 1000 mg oral twice daily.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "861007",
+              "display": "Metformin 1000 MG Oral Tablet"
+            }
+          ],
+          "text": "Metformin 1000 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "authoredOn": "2014-09-22",
+        "dosageInstruction": [
+          {
+            "text": "Take 1000 mg by mouth twice daily with meals"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-ms-lisinopril-003",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lisinopril 20 mg oral daily for hypertension and renal protection.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "314077",
+              "display": "Lisinopril 20 MG Oral Tablet"
+            }
+          ],
+          "text": "Lisinopril 20 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "authoredOn": "2016-02-14",
+        "dosageInstruction": [
+          {
+            "text": "Take 20 mg by mouth once daily"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:medreq-ms-gabapentin-004",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Gabapentin 300 mg oral three times daily for diabetic neuropathy pain.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310430",
+              "display": "Gabapentin 300 MG Oral Capsule"
+            }
+          ],
+          "text": "Gabapentin 300 mg"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "authoredOn": "2020-03-15",
+        "dosageInstruction": [
+          {
+            "text": "Take 300 mg by mouth three times daily"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-ms-a1c-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HbA1c: 10.2% (2025-05-18). Poorly controlled.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "HbA1c"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "effectiveDateTime": "2025-05-18",
+        "valueQuantity": {
+          "value": 10.2,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 7.0,
+              "unit": "%"
+            },
+            "text": "Target <7% for most adults with diabetes"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-ms-a1c-002",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HbA1c: 9.5% (2025-11-20). Improving trend.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "HbA1c"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "effectiveDateTime": "2025-11-20",
+        "valueQuantity": {
+          "value": 9.5,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-ms-a1c-003",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HbA1c: 8.9% (2026-05-02). Improving but still above target. Insulin intensification warranted.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "HbA1c"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "effectiveDateTime": "2026-05-02",
+        "valueQuantity": {
+          "value": 8.9,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-ms-bp-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Blood pressure: 132/78 mmHg (2026-05-02). Well controlled.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood Pressure"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "effectiveDateTime": "2026-05-02",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 132,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 78,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:obs-ms-bmi-001",
+      "resource": {
+        "resourceType": "Observation",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>BMI: 34 kg/m2 (2026-05-02). Class I obesity.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "BMI"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "effectiveDateTime": "2026-05-02",
+        "valueQuantity": {
+          "value": 34,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:po:proc-ms-retinal-001",
+      "resource": {
+        "resourceType": "Procedure",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dilated retinal examination performed 2026-03-15. Findings: mild non-proliferative diabetic retinopathy bilateral, no macular edema.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "252779009",
+              "display": "Screening for diabetic retinopathy"
+            }
+          ],
+          "text": "Dilated retinal examination"
+        },
+        "subject": {
+          "reference": "urn:po:pat-maria-santos-003"
+        },
+        "performedDateTime": "2026-03-15",
+        "outcome": {
+          "text": "Mild NPDR bilateral. No clinically significant macular edema. Recommend follow-up in 6 months."
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    }
+  ]
+}
