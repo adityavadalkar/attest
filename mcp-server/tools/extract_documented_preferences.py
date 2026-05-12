@@ -21,7 +21,7 @@ async def extract_documented_preferences(
     ctx: Context = None,
 ) -> str:
     sharp = get_sharp_context(ctx)
-    pid = patientId or sharp.patient_id
+    pid = sharp.patient_id  # Always use SHARP context, never LLM-provided ID
     fhir = FhirClient(sharp)
     retrieval_ts = datetime.now(timezone.utc).isoformat()
 

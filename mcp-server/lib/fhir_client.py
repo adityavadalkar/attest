@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import logging
 from typing import Any
 
 import httpx
 
 from .sharp_context import SharpContext
+
+logger = logging.getLogger(__name__)
 
 
 class FhirClient:
@@ -17,6 +20,7 @@ class FhirClient:
 
     async def _get(self, path: str, params: dict[str, str] | None = None) -> dict | None:
         url = f"{self._base_url}/{path.lstrip('/')}"
+        logger.warning(f"FHIR GET {url} | headers={list(self._headers.keys())} | auth_present={'Authorization' in self._headers}")
         async with httpx.AsyncClient(timeout=30.0) as client:
             resp = await client.get(url, headers=self._headers, params=params)
             if resp.status_code == 404:

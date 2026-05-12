@@ -16,7 +16,7 @@ def _get_client() -> anthropic.AsyncAnthropic:
     return _client
 
 
-MODEL = "claude-sonnet-4-5-20250514"
+MODEL = "claude-sonnet-4-5-20250929"
 
 
 def _parse_json_response(text: str) -> Any:
